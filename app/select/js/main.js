@@ -1,5 +1,8 @@
 import presentation_preview from './presentation_preview.js';
 import util from './../../util.js';
+import ENUMS from "./../../enums.js";
+const {EVENT_TYPES} = ENUMS;
+console.log(EVENT_TYPES);
 class App{
     constructor(){
         this.self=this;
@@ -12,18 +15,39 @@ class App{
         };
         this.elements = {
             body:document.body,
-            app:document.getElementById("app")
+            app:document.getElementById("app"),
+            buttons: {
+                new:document.querySelector(`div[app-action="new"]`)
+            }
         };
         this.previews = [];
         this.call_frame=()=>{this.frame()};//a function that points to this.frame.
-        util.api("PRESENTATIONS",{});
+        
+        util.api("PRESENTATIONS",{
+            id:"aaaa-aaaaaaaa-aaaa-aaaa"
+        },console.log);
+    }
+    add_preview(data){
+        this.previews.push(new presentation_preview("aaaa-aaaaaaaa-aaaa"))
     }
     init(){
         this.elements = {
             body:document.body,
-            app:document.getElementById("app")
+            app:document.getElementById("app"),
+            buttons: {
+                new:document.querySelector(`div[app-action="new"]`)
+            }
         };//try to initialize;
+        this.elements.buttons.new.addEventListener("mousedown",event=>this.button_press(EVENT_TYPES.new,event));
         if(this.elements.app)this.state.is_initialized=true;
+    }
+    button_press(type,event){
+        console.log(type,event);
+        switch(type){
+            case EVENT_TYPES.new:
+                alert("new");
+            break;
+        }
     }
     start(){
         if(this.state.is_started)throw new Error("app already started");

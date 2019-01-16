@@ -9,7 +9,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./app/select/css/main.css" />
 </head>
 <body>
-    <div class="app-wrapper-page" id="app"></div>
+    <div class="app-wrapper-page" id="app">
+        <div class="app-wrapper">
+            <div class="app-interface-wrapper">
+                <div class="app-interface-button" app-action="new">
+                    <span>NEW!</span>
+                </div>
+            </div>
+            <div class="app-preview-wrapper">
+        
+            </div>
+        </div>
+    </div>
     <script>
         import('./app/select/js/main.js')
         .then(app=>{

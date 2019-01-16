@@ -10,8 +10,12 @@ export default {
         classes&&elt.setAttribute("class",classes.join(" "));
         return elt;
     },
-    api(type,args){
+    api(type,args,cb){
         console.log(`fetching api url: ${`/api/${type}/?${JSON.stringify(args)}`}`);
-        return fetch(`/api/${type}/?${JSON.stringify(args)}`).then(data=>data.text);
+        let request = fetch(`/api/${type}/?${JSON.stringify(args)}`).then(data=>data.json());
+        if(typeof cb == "function"){
+            request.then(cb);
+        }
+        return request;
     }
 }

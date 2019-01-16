@@ -11,4 +11,60 @@ html , body{
     top:0px;
     left:0px;
     overflow: hidden;
+    background-color: #6d0083;
+}
+
+.app-wrapper{
+    margin-top:10px;
+    margin-left:10px;
+    border-radius: 2em;
+    width: calc(100vw - 20px);
+    min-height: calc(100vh - 20px);
+    height: fit-content;
+    background-color: #4b005a;
+}
+
+.app-preview-wrapper{
+    
+}
+
+.app-interface-wrapper{
+    background:#3d0049;
+    width: 300px;
+    height: calc(100vh - 20px);
+    border-radius: 2em 0em 0em 2em;
+    border-right: 3px solid #390044;
+    padding-left: 2em;
+    padding-top: 2em;
+}
+
+.app-interface-button{
+    background-color: #6d0083;
+    border-radius: 2em;
+    padding: 0.3em;
+    font-size: 32px;
+    border: 3px solid #390044;
+    margin-right: 2em;
+    transition: 1s;
+    transition-property: background-color;
+    cursor: pointer;
+}
+.app-interface-button:hover{
+    background-color:#5c006e;
+    transition:1s;
+    transition-property: background-color;
+}
+.app-interface-button:hover > span{
+    position: relative;
+    top: 0px;
+    left: 100px;
+    color: black;
+    transition: 1s;
+}
+.app-interface-button > span{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color:#32003b;
+    transition:1s;
 }
