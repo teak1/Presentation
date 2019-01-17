@@ -2,7 +2,6 @@ import presentation_preview from './presentation_preview.js';
 import util from './../../util.js';
 import ENUMS from "./../../enums.js";
 const {EVENT_TYPES} = ENUMS;
-console.log(EVENT_TYPES);
 class App{
     constructor(){
         this.self=this;
@@ -16,9 +15,7 @@ class App{
         this.elements = {
             body:document.body,
             app:document.getElementById("app"),
-            buttons: {
-                new:document.querySelector(`div[app-action="new"]`)
-            }
+            buttons:[...document.querySelectorAll(`div[app-action]`)]
         };
         this.previews = [];
         this.call_frame=()=>{this.frame()};//a function that points to this.frame.
@@ -27,18 +24,21 @@ class App{
             id:"aaaa-aaaaaaaa-aaaa-aaaa"
         },console.log);
     }
-    add_preview(data){
-        this.previews.push(new presentation_preview("aaaa-aaaaaaaa-aaaa"))
+    add_preview(prev_src){
+        let preview = null;
+        this.previews.push(preview = new presentation_preview(prev_src));
+        document.querySelector(".app-preview-region").appendChild(preview.element);
     }
     init(){
         this.elements = {
             body:document.body,
             app:document.getElementById("app"),
-            buttons: {
-                new:document.querySelector(`div[app-action="new"]`)
-            }
+            buttons:[...document.querySelectorAll(`div[app-action]`)]
         };//try to initialize;
-        this.elements.buttons.new.addEventListener("mousedown",event=>this.button_press(EVENT_TYPES.new,event));
+        this.elements.buttons.forEach(btn=>{
+            btn.addEventListener("mousedown",event=>this.button_press(EVENT_TYPES[btn.getAttribute("app-action")],event));
+
+        });
         if(this.elements.app)this.state.is_initialized=true;
     }
     button_press(type,event){

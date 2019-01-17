@@ -1,4 +1,3 @@
-
 export default {
     make(template){
         let parts = template.split(/[#.]/);
