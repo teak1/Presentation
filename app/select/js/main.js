@@ -71,3 +71,11 @@ class App{
 
 let app = new App();
 export default app;
+
+
+//temp to add content for githubio
+setTimeout(()=>{
+for(var i = 0;i<10;i++){
+    app.add_preview("about:blank");
+}
+},2000);
