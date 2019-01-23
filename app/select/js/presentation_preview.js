@@ -66,12 +66,12 @@ export default class presentation_preview {
         _b.appendChild(_14);
         let _15 = document.createElement("DIV");
         _15.setAttribute("class", "app-interface-button");
-        _15.setAttribute("style", "--offset:30px;");
-        _15.setAttribute("app-action", "delete");
+        //_15.setAttribute("style", "--offset:30px;");
+        _15.setAttribute("app-action", "edit");
         let _16 = document.createTextNode("");
         _15.appendChild(_16);
         let _17 = document.createElement("SPAN");
-        let _18 = document.createTextNode("DELETE");
+        let _18 = document.createTextNode("EDIT");
         _17.appendChild(_18);
         _15.appendChild(_17);
         let _19 = document.createTextNode("");
