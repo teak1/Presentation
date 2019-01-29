@@ -1,0 +1,22 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "by Ian Senne",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-select": "node ../../JSX"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teak1/Presentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teak1/Presentation/issues"
+  },
+  "homepage": "https://github.com/teak1/Presentation#readme"
+}
