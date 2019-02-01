@@ -72,3 +72,7 @@ class App {
 let app = new App();
 console.log(app);
 export default app;
+
+function test() {
+    return (((function(){let _1_04c766ab287255 = document.createElement("DIV");return _1_04c766ab287255;})()))
+}

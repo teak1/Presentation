@@ -69,3 +69,7 @@ class App {
 let app = new App();
 console.log(app);
 export default app;
+
+function test() {
+    return (<div></div>)
+}
