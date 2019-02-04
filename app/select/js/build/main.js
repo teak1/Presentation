@@ -74,5 +74,5 @@ console.log(app);
 export default app;
 
 function test() {
-    return (((function(){let _1_04c766ab287255 = document.createElement("DIV");return _1_04c766ab287255;})()))
+    return (((function(){let _1_0bd136359f48fb = document.createElement("DIV");return _1_0bd136359f48fb;})()))
 }

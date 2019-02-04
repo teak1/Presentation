@@ -12,6 +12,7 @@ export default {
     api(type, args, cb) {
         console.log(`fetching api url: ${`/api/${type}/?${JSON.stringify(args)}`}`);
         let request = fetch(`/api/?${JSON.stringify({ ...args, ...{ "api-route": type } })}`).then(data => data.json());
+        request.then((data) => { console.log(data); return data; })
         if (typeof cb == "function") {
             request.then(cb);
         }

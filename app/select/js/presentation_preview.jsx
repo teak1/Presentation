@@ -5,7 +5,7 @@ export default class presentation_preview {
         this.cb = cb;
         this.id = id;
         this.data = null;
-        util.api("METADATA", { id })
+        util.api("METADATA", { id }, function (data) { console.log(data); return data; })
             .then(data => this.setData(data)).then(() => {
                 this.element = this.createElements(this.data.preview_src);
                 this.cb(this.element);
