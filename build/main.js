@@ -18,8 +18,7 @@ class App {
         this.elements = {
             body: document.body,
             app: document.getElementById("app"),
-            buttons: [...document.querySelectorAll(`div[app-action]`)],
-            new_parent: document.querySelector(".app-new-interface-parent")
+            buttons: [...document.querySelectorAll(`div[app-action]`)]
         };
         this.previews = [];
         this.call_frame = () => { this.frame() };//a function that points to this.frame.
@@ -47,18 +46,9 @@ class App {
         console.log(type, event);
         switch (type) {
             case EVENT_TYPES.new:
-                this.elements.new_parent.appendChild(new_sidebar(this));
-                break;
-            default:
-                console.log("--Unhandled button event--");
-                console.log(type);
-                console.log(event);
-                console.log("--------------------------");
+                this.elements.new_parent.appendChild(new_sidebar());
                 break;
         }
-    }
-    register_button(element) {
-        element.addEventListener("mousedown", event => this.button_press(EVENT_TYPES[element.getAttribute("app-action")], event));
     }
     start() {
         if (this.state.is_started) throw new Error("app already started");
@@ -86,6 +76,6 @@ export default app;
 
 function test() {
     return ((function(){
-let _0_0z14ajzzq9h = document.createElement("div");
-return _0_0z14ajzzq9h;})())
+let _0_0eb9o8z1pnu = document.createElement("div");
+return _0_0eb9o8z1pnu;})())
 }

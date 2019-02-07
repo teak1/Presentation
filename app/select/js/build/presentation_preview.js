@@ -1,7 +1,6 @@
-/*JSX injection*/
-function _JSX(parent, thing) {if(thing.constructor==Array)return thing.forEach(itm=>_JSX(parent,itm));if (thing.nodeType || thing.textContent) {parent.appendChild(thing);} else {parent.appendChild(document.createTextNode(thing.toString()));}}
-/*begin user file*/
-import util from './util.js';
+const _JSX = {attribute(el, name, val) {if (val.constructor == Object) {for (let k in val) {el[name][k] = val[k];}return;}el.setAttribute(name, val);},append(el, child) {if (child.constructor == Array) return item.forEach((i) => _JSX.append(el, i));if (child.nodeType || child.textContent) {el.appendChild(item);} else {el.appendChild(document.createTextNode(child.toString()));}}};
+/*end of jsx code*/
+import util from "./util.js";
 export default class presentation_preview {
     constructor(id, cb) {
         this.element = null;
@@ -24,7 +23,50 @@ export default class presentation_preview {
         }
     }
     createElements(src) {
-        return (((function(){let _1_033100f9aea609 = document.createElement("DIV");_1_033100f9aea609.setAttribute("class",`app-preview-wrapper`);let _2_009ead0b6c7952 = document.createElement("DIV");_2_009ead0b6c7952.setAttribute("class",`app-preview-border`);let _3_03bc3512f8a647 = document.createElement("DIV");_3_03bc3512f8a647.setAttribute("class",`app-preview-preview`);let _4_0212cff1fe1cf9 = document.createElement("DIV");_4_0212cff1fe1cf9.setAttribute("class",`app-preview-image-wrapper`);let _5_0680ba6f2ed282 = document.createElement("IMG");_5_0680ba6f2ed282.setAttribute("src",src);_5_0680ba6f2ed282.setAttribute("class",`app-preview-image`);_4_0212cff1fe1cf9.appendChild(_5_0680ba6f2ed282);_3_03bc3512f8a647.appendChild(_4_0212cff1fe1cf9);let _6_09af7f6bd85fdf=document.createTextNode(`Presentation preview`);_3_03bc3512f8a647.appendChild(_6_09af7f6bd85fdf);_2_009ead0b6c7952.appendChild(_3_03bc3512f8a647);let _7_0ca85b75623701 = document.createElement("DIV");_7_0ca85b75623701.setAttribute("class",`app-preview-button-display-mask`);let _8_04fc9a6374b5b9 = document.createElement("DIV");_8_04fc9a6374b5b9.setAttribute("class",`app-preview-button-wrapper`);let _9_04995a36b4c0bb = document.createElement("DIV");_9_04995a36b4c0bb.setAttribute("class",`app-interface-button`);_9_04995a36b4c0bb.setAttribute("app-action",`open`);let _a_0862d3adc00dc8 = document.createElement("SPAN");let _b_0a522e74c25977=document.createTextNode(`OPEN`);_a_0862d3adc00dc8.appendChild(_b_0a522e74c25977);_9_04995a36b4c0bb.appendChild(_a_0862d3adc00dc8);_8_04fc9a6374b5b9.appendChild(_9_04995a36b4c0bb);let _c_03ca9ff45ff882 = document.createElement("HR");_c_03ca9ff45ff882.setAttribute("class",`app-invisible`);_8_04fc9a6374b5b9.appendChild(_c_03ca9ff45ff882);let _d_0be6531b5650d1 = document.createElement("DIV");_d_0be6531b5650d1.setAttribute("class",`app-interface-button`);_d_0be6531b5650d1.setAttribute("app-action",`edit`);let _e_0d3f49654bbc06 = document.createElement("SPAN");let _f_092f6eafc0a82=document.createTextNode(`EDIT`);_e_0d3f49654bbc06.appendChild(_f_092f6eafc0a82);_d_0be6531b5650d1.appendChild(_e_0d3f49654bbc06);_8_04fc9a6374b5b9.appendChild(_d_0be6531b5650d1);_7_0ca85b75623701.appendChild(_8_04fc9a6374b5b9);_2_009ead0b6c7952.appendChild(_7_0ca85b75623701);_1_033100f9aea609.appendChild(_2_009ead0b6c7952);return _1_033100f9aea609;})()));
+        return ((function(){
+let _0_0y69gssqnzkh = document.createElement("div");
+_JSX.attribute(_0_0y69gssqnzkh,"class","app-preview-wrapper");
+let _1_0lrak2yhvi6d = document.createElement("div");
+_JSX.attribute(_1_0lrak2yhvi6d,"class","app-preview-border");
+let _2_0vvpns7sh8b = document.createElement("div");
+_JSX.attribute(_2_0vvpns7sh8b,"class","app-preview-preview");
+let _3_0qg0d4qx5gdr = document.createElement("div");
+_JSX.attribute(_3_0qg0d4qx5gdr,"class","app-preview-image-wrapper");
+let _4_0su5jif4vyus = document.createElement("img");
+_JSX.attribute(_4_0su5jif4vyus,"src",src);
+_JSX.attribute(_4_0su5jif4vyus,"class","app-preview-image");
+_3_0qg0d4qx5gdr.appendChild(_4_0su5jif4vyus);
+_2_0vvpns7sh8b.appendChild(_3_0qg0d4qx5gdr);
+let _5_04tzkzodjos = document.createTextNode("Presentation preview");
+_2_0vvpns7sh8b.appendChild(_5_04tzkzodjos);
+_1_0lrak2yhvi6d.appendChild(_2_0vvpns7sh8b);
+let _6_0bcngc85pbdp = document.createElement("div");
+_JSX.attribute(_6_0bcngc85pbdp,"class","app-preview-button-display-mask");
+let _7_0crn90p503f = document.createElement("div");
+_JSX.attribute(_7_0crn90p503f,"class","app-preview-button-wrapper");
+let _8_0dwy0qilc3o = document.createElement("div");
+_JSX.attribute(_8_0dwy0qilc3o,"class","app-interface-button");
+_JSX.attribute(_8_0dwy0qilc3o,"app-action","open");
+let _9_0e4sne97smzi = document.createElement("span");
+let _a_0c4bk4cx8nh5 = document.createTextNode("OPEN");
+_9_0e4sne97smzi.appendChild(_a_0c4bk4cx8nh5);
+_8_0dwy0qilc3o.appendChild(_9_0e4sne97smzi);
+_7_0crn90p503f.appendChild(_8_0dwy0qilc3o);
+let _b_0owcs6c7rwli = document.createElement("hr");
+_JSX.attribute(_b_0owcs6c7rwli,"class","app-invisible");
+_7_0crn90p503f.appendChild(_b_0owcs6c7rwli);
+let _c_0f00grkgcao = document.createElement("div");
+_JSX.attribute(_c_0f00grkgcao,"class","app-interface-button");
+_JSX.attribute(_c_0f00grkgcao,"app-action","edit");
+let _d_0rkz9o9pptyi = document.createElement("span");
+let _e_0do0msc4xcdi = document.createTextNode("EDIT");
+_d_0rkz9o9pptyi.appendChild(_e_0do0msc4xcdi);
+_c_0f00grkgcao.appendChild(_d_0rkz9o9pptyi);
+_7_0crn90p503f.appendChild(_c_0f00grkgcao);
+_6_0bcngc85pbdp.appendChild(_7_0crn90p503f);
+_1_0lrak2yhvi6d.appendChild(_6_0bcngc85pbdp);
+_0_0y69gssqnzkh.appendChild(_1_0lrak2yhvi6d);
+return _0_0y69gssqnzkh;})());
     }
     render() {
         //do stuff to make preview;

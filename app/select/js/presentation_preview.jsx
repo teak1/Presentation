@@ -1,4 +1,4 @@
-import util from './util.jsx';
+import util from "./util.jsx";
 export default class presentation_preview {
     constructor(id, cb) {
         this.element = null;

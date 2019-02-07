@@ -1,4 +1,4 @@
 {
     "start_file": "./app/select/js/main.jsx",
-    "outdir": "./build/"
+    "outdir": "./app/select/js/build/"
 }

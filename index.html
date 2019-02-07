@@ -16,6 +16,7 @@
                 <div class="app-interface-button" app-action="new">
                     <span>NEW!</span>
                 </div>
+                <div class="app-new-interface-parent"></div>
             </div>
             <div class="app-preview-region">
             </div>
@@ -24,10 +25,12 @@
     <script>
         import('./app/select/js/build/main.js')
             .then(app => {
+                console.log(app);
                 window.app = app.default;
                 app.default.start();
             }).catch(error => {
                 console.warn(app, error);
+                throw error;
             });
     </script>
 </body>

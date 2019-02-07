@@ -1,6 +1,7 @@
 import presentation_preview from "./presentation_preview.jsx";
 import util from "./util.jsx";
 import ENUMS from "./enums.jsx";
+import new_sidebar from "./new_sidebar.jsx";
 const { EVENT_TYPES } = ENUMS;
 class App {
     constructor() {
@@ -15,7 +16,8 @@ class App {
         this.elements = {
             body: document.body,
             app: document.getElementById("app"),
-            buttons: [...document.querySelectorAll(`div[app-action]`)]
+            buttons: [...document.querySelectorAll(`div[app-action]`)],
+            new_parent: document.querySelector(".app-new-interface-parent")
         };
         this.previews = [];
         this.call_frame = () => { this.frame() };//a function that points to this.frame.
@@ -30,7 +32,8 @@ class App {
         this.elements = {
             body: document.body,
             app: document.getElementById("app"),
-            buttons: [...document.querySelectorAll(`div[app-action]`)]
+            buttons: [...document.querySelectorAll(`div[app-action]`)],
+            new_parent: document.querySelector(".app-new-interface-parent")
         };//try to initialize;
         this.elements.buttons.forEach(btn => {
             btn.addEventListener("mousedown", event => this.button_press(EVENT_TYPES[btn.getAttribute("app-action")], event));
@@ -42,9 +45,18 @@ class App {
         console.log(type, event);
         switch (type) {
             case EVENT_TYPES.new:
-                alert("new");
+                this.elements.new_parent.appendChild(new_sidebar(this));
+                break;
+            default:
+                console.log("--Unhandled button event--");
+                console.log(type);
+                console.log(event);
+                console.log("--------------------------");
                 break;
         }
+    }
+    register_button(element) {
+        element.addEventListener("mousedown", event => this.button_press(EVENT_TYPES[element.getAttribute("app-action")], event));
     }
     start() {
         if (this.state.is_started) throw new Error("app already started");
