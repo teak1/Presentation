@@ -1,6 +1,6 @@
 import util from "./util.jsx";
 export default class presentation_preview {
-    constructor(id, cb) {
+    constructor(id, cb, app) {
         this.element = null;
         this.cb = cb;
         this.id = id;
@@ -21,7 +21,7 @@ export default class presentation_preview {
         }
     }
     createElements(src) {
-        return (<div class="app-preview-wrapper">
+        let e = (<div class="app-preview-wrapper">
             <div class="app-preview-border">
                 <div class="app-preview-preview">
                     <div class="app-preview-image-wrapper">
@@ -36,7 +36,7 @@ export default class presentation_preview {
                                 OPEN
                             </span>
                         </div>
-                        <hr class="app-invisible" />
+                        <hr class="app-transparent" />
                         <div class="app-interface-button" app-action="edit">
                             <span>
                                 EDIT
@@ -46,6 +46,9 @@ export default class presentation_preview {
                 </div>
             </div>
         </div>);
+        [...e.querySelectorAll(".app-interface-button")].forEach(el => app.register_button(el));
+
+        return e;
     }
     render() {
         //do stuff to make preview;

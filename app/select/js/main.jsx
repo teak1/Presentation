@@ -26,7 +26,7 @@ class App {
     }
     add_preview(prev_id) {
         let preview = null;
-        this.previews.push(preview = new presentation_preview(prev_id, element => document.querySelector(".app-preview-region").appendChild(element)));
+        this.previews.push(preview = new presentation_preview(prev_id, element => document.querySelector(".app-preview-region").appendChild(element), this));
     }
     init() {
         this.elements = {
@@ -46,6 +46,7 @@ class App {
         switch (type) {
             case EVENT_TYPES.new:
                 this.elements.new_parent.appendChild(new_sidebar(this));
+                document.querySelector(".app-new-button-wrapper").classList.add("app-new-button-vanish");
                 break;
             default:
                 console.log("--Unhandled button event--");
@@ -81,7 +82,3 @@ class App {
 let app = new App();
 console.log(app);
 export default app;
-
-function test() {
-    return (<div></div>)
-}

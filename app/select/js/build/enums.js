@@ -5,6 +5,7 @@ export default {
         new: Symbol("NEW"),
         open: Symbol("OPEN"),
         delete: Symbol("DELETE"),
-        create_new: Symbol("CREATE_NEW")
+        create_new: Symbol("CREATE_NEW"),
+        edit: Symbol("EDIT")
     }
 }

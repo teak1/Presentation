@@ -71,7 +71,7 @@
     overflow-y:scroll;
 }
 .app-preview-border{
-  background:red;
+  background:#32003b;
   width: 100%;
   height: 100%;
   border-radius: 3em;
@@ -88,11 +88,11 @@
   overflow: hidden;
 }
 .app-preview-image{
-  width:100%;
-  height:100%;
+  width:300px;
+  height:300px;
 }
 .app-preview-button-wrapper{
-  background:blue;
+  background:#32003b;
   position: relative;
   top:100%;
   width:100%;
@@ -118,4 +118,26 @@
 
 .app-transparent{
   border:none;
+}
+.app-new-button-wrapper{
+  width:100%;
+}
+.app-new-button-vanish{
+  position: relative;
+  width:0px;
+  overflow: hidden;
+  transition-duration: 1s;
+  transition-property: width;
+  height:min-content;
+}
+.app-new-button-vanish > .app-interface-button{
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+.app-new-button-vanish > .app-interface-button > span{
+  left: 0px;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: left opacity;
 }
