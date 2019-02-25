@@ -1,7 +1,9 @@
-import presentation_preview from "./presentation_preview.jsx";
-import util from "./util.jsx";
-import ENUMS from "./enums.jsx";
-import new_sidebar from "./new_sidebar.jsx";
+const _JSX = {attribute(el, name, val) {if (val.constructor == Object) {for (let k in val) {el[name][k] = val[k];}return;}el.setAttribute(name, val);},append(el, child) {if (child.constructor == Array) return item.forEach((i) => _JSX.append(el, i));if (child.nodeType || child.textContent) {el.appendChild(item);} else {el.appendChild(document.createTextNode(child.toString()));}}};
+/*end of jsx code*/
+import presentation_preview from "./presentation_preview.js";
+import util from "./util.js";
+import ENUMS from "./enums.js";
+import new_sidebar from "./new_sidebar.js";
 const { EVENT_TYPES } = ENUMS;
 class App {
     constructor() {

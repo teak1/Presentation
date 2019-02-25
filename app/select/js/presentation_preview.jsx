@@ -12,9 +12,9 @@ export default class presentation_preview {
             });
     }
     setData(data) {
-        if (data.name && data.description && data.type === "METADATA") {
-            this.data = data;
-            this.render();
+        if (data.META && data.META.name && data.META.description && data.META.type === "METADATA") {
+            this.data = data.META;
+            this.data.query = data.query;
         } else {
             console.log(data);
             throw new Error("unexpected data format for preview");
@@ -27,19 +27,25 @@ export default class presentation_preview {
                     <div class="app-preview-image-wrapper">
                         <img src={src} class="app-preview-image" />
                     </div>
-                    Presentation preview
+                    <h1 class="app-preview-text">{this.data.name}</h1>
                 </div>
                 <div class="app-preview-button-display-mask">
                     <div class="app-preview-button-wrapper">
-                        <div class="app-interface-button" app-action="open">
+                        <div class="app-interface-button" app-action="open" target-presentation={this.data.query.id}>
                             <span>
                                 OPEN
                             </span>
                         </div>
                         <hr class="app-transparent" />
-                        <div class="app-interface-button" app-action="edit">
+                        <div class="app-interface-button" app-action="edit" target-presentation={this.data.query.id}>
                             <span>
                                 EDIT
+                            </span>
+                        </div>
+                        <hr class="app-transparent" />
+                        <div class="app-interface-button" app-action="delete" target-presentation={this.data.query.id} style="--offset:40px;">
+                            <span>
+                                DELETE
                             </span>
                         </div>
                     </div>
@@ -49,8 +55,5 @@ export default class presentation_preview {
         [...e.querySelectorAll(".app-interface-button")].forEach(el => app.register_button(el));
 
         return e;
-    }
-    render() {
-        //do stuff to make preview;
     }
 }
