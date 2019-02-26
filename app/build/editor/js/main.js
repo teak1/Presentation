@@ -1,7 +1,29 @@
-const _JSX = {attribute(el, name, val) {if (val.constructor == Object) {for (let k in val) {el[name][k] = val[k];}return;}el.setAttribute(name, val);},append(el, child) {if (child.constructor == Array) return item.forEach((i) => _JSX.append(el, i));if (child.nodeType || child.textContent) {el.appendChild(item);} else {el.appendChild(document.createTextNode(child.toString()));}}};
+const _JSX = {
+    attribute(el, name, val) {
+        if (val.constructor == Object) {
+            for (let k in val) {
+                el[name][k] = val[k];
+            }
+            return;
+        }
+        el.setAttribute(name, val);
+    },
+    append(el, child) {
+        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
+        if (child.nodeType || child.textContent) {
+            el.appendChild(child);
+        } else {
+            el.appendChild(document.createTextNode(child.toString()));
+        }
+    }
+};
 /*end of jsx code*/
 import util from "./../../select/js/util.js";
 import html_parts from "./page.js";
+const EVENT_TYPES = {
+    back: Symbol("back"),
+    "toggle-settings": Symbol("toggle-settings")
+}
 class App {
     constructor() {
         this.self = this;
@@ -35,17 +57,16 @@ class App {
     }
     init_page() {
         if (this.elements.body) {
-            this.elements.body.appendChild(html_parts.headbar(this.presentation));
+            this.elements.app.appendChild(html_parts.headbar(this.presentation));
         } else {
-            setTimeout(_ => this.init(), 100);
+            setTimeout(_ => this.init_page(), 100);
         }
     }
     button_press(type, event) {
         console.log(type, event);
         switch (type) {
-            case EVENT_TYPES.new:
-                this.elements.new_parent.appendChild(new_sidebar(this));
-                document.querySelector(".app-new-button-wrapper").classList.add("app-new-button-vanish");
+            case EVENT_TYPES.back:
+                history.back();
                 break;
             default:
                 console.log("--Unhandled button event--");

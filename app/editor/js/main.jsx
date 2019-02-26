@@ -1,5 +1,9 @@
 import util from "./../../select/js/util.jsx";
 import html_parts from "./page.jsx";
+const EVENT_TYPES = {
+    back: Symbol("back"),
+    "toggle-settings": Symbol("toggle-settings")
+}
 class App {
     constructor() {
         this.self = this;
@@ -33,17 +37,16 @@ class App {
     }
     init_page() {
         if (this.elements.body) {
-            this.elements.body.appendChild(html_parts.headbar(this.presentation));
+            this.elements.app.appendChild(html_parts.headbar(this.presentation));
         } else {
-            setTimeout(_ => this.init(), 100);
+            setTimeout(_ => this.init_page(), 100);
         }
     }
     button_press(type, event) {
         console.log(type, event);
         switch (type) {
-            case EVENT_TYPES.new:
-                this.elements.new_parent.appendChild(new_sidebar(this));
-                document.querySelector(".app-new-button-wrapper").classList.add("app-new-button-vanish");
+            case EVENT_TYPES.back:
+                history.back();
                 break;
             default:
                 console.log("--Unhandled button event--");
