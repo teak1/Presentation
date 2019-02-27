@@ -55,8 +55,8 @@ class App {
                 window.location.replace(window.location.href + "edit?" + id);
                 break;
             case EVENT_TYPES.create_new:
-                let name = document.querySelector("#app-new-name").value;
-                let desc = document.querySelector("#app-new-description").value;
+                let name = document.querySelector("#app-new-name").value.replace(/\s/g, "\\s");
+                let desc = document.querySelector("#app-new-description").value.replace(/\s/g, "\\s");
                 if (name.trim() != "") {
                     util.api("MAKE_NEW", { name, desc }, res => {
                         history.pushState({}, "Presentations", window.location.href);

@@ -18,6 +18,12 @@ const _JSX = {
     }
 };
 /*end of jsx code*/
-import ALL from "./select/js/main.js";
-import ALL from "./editor/js/main.js";
-import ALL from "./present/js/main.js";
+export default {
+    EVENT_TYPES: {
+        new: Symbol("NEW"),
+        open: Symbol("OPEN"),
+        delete: Symbol("DELETE"),
+        create_new: Symbol("CREATE_NEW"),
+        edit: Symbol("EDIT")
+    }
+}

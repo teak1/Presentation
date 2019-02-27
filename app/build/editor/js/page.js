@@ -21,15 +21,15 @@ const _JSX = {
 
 function makeButton(path, cb) {
     let element = ((function(_this){
-let _0_0ft0wwss5cpv = document.createElement("div");
-_JSX.attribute(_0_0ft0wwss5cpv,"class","app-button-static");
-_JSX.attribute(_0_0ft0wwss5cpv,"app-action",cb);
-let _1_0yqad6of71f9 = document.createElement("img");
-_JSX.attribute(_1_0yqad6of71f9,"src",path);
-_JSX.attribute(_1_0yqad6of71f9,"width","50");
-_JSX.attribute(_1_0yqad6of71f9,"height","50");
-_0_0ft0wwss5cpv.appendChild(_1_0yqad6of71f9);
-return _0_0ft0wwss5cpv;})(this));
+let _0_0udrlq8fx3t = document.createElement("div");
+_JSX.attribute(_0_0udrlq8fx3t,"class","app-button-static");
+_JSX.attribute(_0_0udrlq8fx3t,"app-action",cb);
+let _1_0rpe0xnkez0o = document.createElement("img");
+_JSX.attribute(_1_0rpe0xnkez0o,"src",path);
+_JSX.attribute(_1_0rpe0xnkez0o,"width","50");
+_JSX.attribute(_1_0rpe0xnkez0o,"height","50");
+_0_0udrlq8fx3t.appendChild(_1_0rpe0xnkez0o);
+return _0_0udrlq8fx3t;})(this));
     app.register_button(element);
     return element;
 }
@@ -38,17 +38,17 @@ export default {
     headbar(presentation) {
         return (
             (function(_this){
-let _0_0z40dkbvzpii = document.createElement("div");
-_JSX.attribute(_0_0z40dkbvzpii,"class","app-header");
-_JSX.append(_0_0z40dkbvzpii,makeButton("/assets/ico/png/back.png", "back"));
-let _1_0aef8u0q5bsv = document.createElement("div");
-_JSX.attribute(_1_0aef8u0q5bsv,"class","app-title-wrapper");
-let _2_0gnu55ubgysj = document.createElement("strong");
-_JSX.append(_2_0gnu55ubgysj,presentation.META.name);
-_1_0aef8u0q5bsv.appendChild(_2_0gnu55ubgysj);
-_0_0z40dkbvzpii.appendChild(_1_0aef8u0q5bsv);
-_JSX.append(_0_0z40dkbvzpii,makeButton("/assets/ico/png/settings.png", "toggle-settings"));
-return _0_0z40dkbvzpii;})(this)
+let _0_06c0b7dcwchn = document.createElement("div");
+_JSX.attribute(_0_06c0b7dcwchn,"class","app-header");
+_JSX.append(_0_06c0b7dcwchn,makeButton("/assets/ico/png/back.png", "back"));
+let _1_0tczx9vx959 = document.createElement("div");
+_JSX.attribute(_1_0tczx9vx959,"class","app-title-wrapper");
+let _2_0z0wgr8u1avj = document.createElement("strong");
+_JSX.append(_2_0z0wgr8u1avj,presentation.META.name);
+_1_0tczx9vx959.appendChild(_2_0z0wgr8u1avj);
+_0_06c0b7dcwchn.appendChild(_1_0tczx9vx959);
+_JSX.append(_0_06c0b7dcwchn,makeButton("/assets/ico/png/settings.png", "toggle-settings"));
+return _0_06c0b7dcwchn;})(this)
         );
     }
 }

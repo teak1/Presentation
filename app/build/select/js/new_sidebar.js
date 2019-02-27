@@ -21,25 +21,25 @@ const _JSX = {
 export default function (app) {
     let elements = (
         (function(_this){
-let _0_0n4k3mif662h = document.createElement("div");
-_JSX.attribute(_0_0n4k3mif662h,"class","app-new-sidebar-menu");
-let _1_088nd0qxxu0h = document.createElement("div");
-_JSX.attribute(_1_088nd0qxxu0h,"class","app-interface-button");
-_JSX.attribute(_1_088nd0qxxu0h,"app-action","create_new");
-let _2_0hd5e4eb83zm = document.createElement("span");
-let _3_0e0bnjzbq6af = document.createTextNode("Create");
-_2_0hd5e4eb83zm.appendChild(_3_0e0bnjzbq6af);
-_1_088nd0qxxu0h.appendChild(_2_0hd5e4eb83zm);
-_0_0n4k3mif662h.appendChild(_1_088nd0qxxu0h);
-let _4_07pel4lwp05 = document.createElement("input");
-_JSX.attribute(_4_07pel4lwp05,"id","app-new-name");
-_JSX.attribute(_4_07pel4lwp05,"placeholder","Name");
-_0_0n4k3mif662h.appendChild(_4_07pel4lwp05);
-let _5_0basz4z2e46l = document.createElement("textarea");
-_JSX.attribute(_5_0basz4z2e46l,"id","app-new-description");
-_JSX.attribute(_5_0basz4z2e46l,"placeholder","Description");
-_0_0n4k3mif662h.appendChild(_5_0basz4z2e46l);
-return _0_0n4k3mif662h;})(this)
+let _0_0qyj711g7y8h = document.createElement("div");
+_JSX.attribute(_0_0qyj711g7y8h,"class","app-new-sidebar-menu");
+let _1_0pxzx39bytbp = document.createElement("div");
+_JSX.attribute(_1_0pxzx39bytbp,"class","app-interface-button");
+_JSX.attribute(_1_0pxzx39bytbp,"app-action","create_new");
+let _2_0losaddcd80g = document.createElement("span");
+let _3_0ofbqe85zv1n = document.createTextNode("Create");
+_2_0losaddcd80g.appendChild(_3_0ofbqe85zv1n);
+_1_0pxzx39bytbp.appendChild(_2_0losaddcd80g);
+_0_0qyj711g7y8h.appendChild(_1_0pxzx39bytbp);
+let _4_08t3ra6ql1c = document.createElement("input");
+_JSX.attribute(_4_08t3ra6ql1c,"id","app-new-name");
+_JSX.attribute(_4_08t3ra6ql1c,"placeholder","Name");
+_0_0qyj711g7y8h.appendChild(_4_08t3ra6ql1c);
+let _5_0zhrrrwpcxb = document.createElement("textarea");
+_JSX.attribute(_5_0zhrrrwpcxb,"id","app-new-description");
+_JSX.attribute(_5_0zhrrrwpcxb,"placeholder","Description");
+_0_0qyj711g7y8h.appendChild(_5_0zhrrrwpcxb);
+return _0_0qyj711g7y8h;})(this)
     );
     app.register_button(elements.children[0]);
 

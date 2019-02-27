@@ -1,0 +1,169 @@
+.app-wrapper-page{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    overflow: hidden;
+    background-color: #6d0083;
+}
+.app-wrapper{
+    margin-top:10px;
+    margin-left:10px;
+    border-radius: 2em;
+    width: calc(100vw - 20px);
+    min-height: calc(100vh - 20px);
+    height: fit-content;
+    background-color: #4b005a;
+}
+.app-interface-wrapper{
+    display:inline-block;
+    background:#3d0049;
+    width: 300px;
+    height: calc(100vh - 20px);
+    border-radius: 2em 0em 0em 2em;
+    border-right: 3px solid #390044;
+    padding-left: 2em;
+    padding-top: 2em;
+}
+.app-interface-button{
+    background-color: #6d0083;
+    border-radius: 2em;
+    padding: 0.3em;
+    font-size: 32px;
+    border: 3px solid #390044;
+    margin-right: 2em;
+    transition: 0.2s;
+    transition-property: background-color;
+    cursor: pointer;
+}
+.app-interface-button:hover{
+    background-color:#5c006e;
+    transition:0.2s;
+    transition-property: background-color;
+}
+.app-interface-button:hover > span{
+    position: relative;
+    top: 0px;
+    left: calc(100px - var(--offset,0px));
+    color: black;
+    transition: 0.2s;
+}
+.app-interface-button > span{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color:#32003b;
+    transition:0.2s;
+}
+.app-preview-wrapper{
+  width:300px;
+  height:300px;
+  display:inline-block;
+  margin:1em;
+  position: relative;
+}
+.app-preview-region{
+    width:calc(100% - 300px);
+    height:100%;
+    display:inline-block;
+    position: absolute;
+    top:10px;
+    overflow-y:scroll;
+}
+.app-preview-border{
+  background:#32003b;
+  width: 100%;
+  height: 100%;
+  border-radius: 3em;
+  overflow: hidden;
+}
+.app-preview-preview{
+  width:calc(100% - 10px);
+  height:calc(100% - 10px);
+  margin-left:5px;
+  margin-top:5px;
+  background-color:black;
+  border-radius: 3em;
+  top:5px;
+  overflow: hidden;
+}
+.app-preview-image{
+  width:300px;
+  height:300px;
+}
+.app-preview-button-wrapper{
+  background:#32003b;
+  position: relative;
+  top:100%;
+  width:100%;
+  height:250px;
+  transition: 0.2s;
+  padding-left:1.5em;
+  padding-top:0.3em;
+}
+.app-preview-button-display-mask{
+  width:calc(100% - 10px);
+  height:calc(100% - 10px);
+  margin-left:5px;
+  border-radius: 3em;
+  position:relative;
+  top:calc(calc(100% - 10px) * -1);
+  overflow:hidden;
+  
+}
+.app-preview-button-display-mask:hover > .app-preview-button-wrapper{
+  top:calc(100% - 225px);
+  transition: 0.2s;
+}
+
+.app-transparent{
+  border:none;
+}
+.app-new-button-wrapper{
+  width:100%;
+}
+.app-new-button-vanish{
+  position: relative;
+  width:0px;
+  overflow: hidden;
+  transition-duration: 1s;
+  transition-property: width;
+  height:min-content;
+  margin: 0px;
+}
+.app-new-button-vanish > .app-interface-button{
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity;
+  display: none;
+}
+.app-new-button-vanish > .app-interface-button > span{
+  left: 0px;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: left opacity;
+}
+
+#app-new-name{
+  padding: 1em;
+  border-radius: 1em;
+  width: calc(100% - 5em);
+  font-size: 24px;
+}
+#app-new-description  {
+  padding: 1em;
+  border-radius: 10px;
+  width: calc(100% - 5em);
+  height:30ch;
+  font-size: 12px;
+}
+.app-preview-image-wrapper{
+  height: 0px;
+}
+
+.app-preview-text{
+  position: relative;
+  left:1em;
+  color:black;
+}
