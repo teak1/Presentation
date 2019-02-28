@@ -26,6 +26,7 @@ class App {
         util.api("GET", { id: this.id }, (result) => {
             console.log(result);
             this.presentation = result;
+            this.head.title.innerText = this.presentation.meta.name.replace(/\\s/g, " ");
             this.init_page();
         });
     }

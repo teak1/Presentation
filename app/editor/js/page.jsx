@@ -15,7 +15,7 @@ export default {
                     makeButton("/assets/ico/png/back.png", "back")
                 }
                 <div class="app-title-wrapper">
-                    <strong>{presentation.META.name}</strong>
+                    <strong>{presentation.META.name.replace(/\\s/g, " ")}</strong>
                 </div>
                 {
                     makeButton("/assets/ico/png/settings.png", "toggle-settings")

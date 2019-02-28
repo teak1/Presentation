@@ -21,12 +21,19 @@ class App {
         };
         this.previews = [];
         this.call_frame = () => { this.frame() };//a function that points to this.frame.
-
-        util.api("PRESENTATIONS", {}, (data) => { data.items.forEach(_ => this.add_preview(_)); });
+        this.to_load = 0;
+        this.loaded = 0;
+        util.api("PRESENTATIONS", {}, (data) => { this.to_load++; data.items.forEach(_ => { this.add_preview(_); }) });
     }
     add_preview(prev_id) {
         let preview = null;
-        this.previews.push(preview = new presentation_preview(prev_id, element => document.querySelector(".app-preview-region").appendChild(element), this));
+        this.previews.push(preview = new presentation_preview(prev_id, element => {
+            this.loaded++; document.querySelector(".app-preview-region").appendChild(element); if (this.to_load == this.loaded) {
+                document.getElementById("app-loading").setAttribute("style", "opacity:0;transition:1s;");
+                document.getElementById("app").setAttribute("style", "opacity:1;transition:1s;");
+
+            }
+        }, this));
     }
     init() {
         this.elements = {

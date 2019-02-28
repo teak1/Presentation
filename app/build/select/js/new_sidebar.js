@@ -21,25 +21,25 @@ const _JSX = {
 export default function (app) {
     let elements = (
         (function(_this){
-let _0_0qyj711g7y8h = document.createElement("div");
-_JSX.attribute(_0_0qyj711g7y8h,"class","app-new-sidebar-menu");
-let _1_0pxzx39bytbp = document.createElement("div");
-_JSX.attribute(_1_0pxzx39bytbp,"class","app-interface-button");
-_JSX.attribute(_1_0pxzx39bytbp,"app-action","create_new");
-let _2_0losaddcd80g = document.createElement("span");
-let _3_0ofbqe85zv1n = document.createTextNode("Create");
-_2_0losaddcd80g.appendChild(_3_0ofbqe85zv1n);
-_1_0pxzx39bytbp.appendChild(_2_0losaddcd80g);
-_0_0qyj711g7y8h.appendChild(_1_0pxzx39bytbp);
-let _4_08t3ra6ql1c = document.createElement("input");
-_JSX.attribute(_4_08t3ra6ql1c,"id","app-new-name");
-_JSX.attribute(_4_08t3ra6ql1c,"placeholder","Name");
-_0_0qyj711g7y8h.appendChild(_4_08t3ra6ql1c);
-let _5_0zhrrrwpcxb = document.createElement("textarea");
-_JSX.attribute(_5_0zhrrrwpcxb,"id","app-new-description");
-_JSX.attribute(_5_0zhrrrwpcxb,"placeholder","Description");
-_0_0qyj711g7y8h.appendChild(_5_0zhrrrwpcxb);
-return _0_0qyj711g7y8h;})(this)
+let _0_0n3va2yag97 = document.createElement("div");
+_JSX.attribute(_0_0n3va2yag97,"class","app-new-sidebar-menu");
+let _1_0plqc53sbm6n = document.createElement("div");
+_JSX.attribute(_1_0plqc53sbm6n,"class","app-interface-button");
+_JSX.attribute(_1_0plqc53sbm6n,"app-action","create_new");
+let _2_0n7r4cy3pw4i = document.createElement("span");
+let _3_0nziujmkwtf7 = document.createTextNode("Create");
+_2_0n7r4cy3pw4i.appendChild(_3_0nziujmkwtf7);
+_1_0plqc53sbm6n.appendChild(_2_0n7r4cy3pw4i);
+_0_0n3va2yag97.appendChild(_1_0plqc53sbm6n);
+let _4_0t759bgk9x2 = document.createElement("input");
+_JSX.attribute(_4_0t759bgk9x2,"id","app-new-name");
+_JSX.attribute(_4_0t759bgk9x2,"placeholder","Name");
+_0_0n3va2yag97.appendChild(_4_0t759bgk9x2);
+let _5_0ni2zfx1zdxq = document.createElement("textarea");
+_JSX.attribute(_5_0ni2zfx1zdxq,"id","app-new-description");
+_JSX.attribute(_5_0ni2zfx1zdxq,"placeholder","Description");
+_0_0n3va2yag97.appendChild(_5_0ni2zfx1zdxq);
+return _0_0n3va2yag97;})(this)
     );
     app.register_button(elements.children[0]);
 

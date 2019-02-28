@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="app-wrapper-page" id="app">
+    <div class="app-wrapper-page" id="app" style="opacity: 0;">
         <div class="app-wrapper">
             <div class="app-interface-wrapper">
                 <div class="app-new-button-wrapper">
@@ -23,6 +23,12 @@
             <div class="app-preview-region">
             </div>
         </div>
+    </div>
+    <div id="app-loading" style="opacity: 1;">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="up"></div>
+        <div class="down"></div>
     </div>
     <script>
         import('./app/build/select/js/main.js')

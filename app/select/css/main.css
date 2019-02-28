@@ -1,11 +1,14 @@
+html,body{
+  background: #6d0083;
+}
 .app-wrapper-page{
-    width:100%;
-    height: 100%;
-    position: absolute;
-    top:0px;
-    left:0px;
-    overflow: hidden;
-    background-color: #6d0083;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top:0px;
+  left:0px;
+  overflow: hidden;
+  background-color: #6d0083;
 }
 .app-wrapper{
     margin-top:10px;
@@ -166,4 +169,164 @@
   position: relative;
   left:1em;
   color:black;
+}
+
+
+#app-loading{
+  width:100px;
+  height: 100px;
+  position: absolute;
+  top:calc(50vh - 50px);
+  left:calc(50vw - 50px);
+  animation:loading-anim 10s infinite;
+  overflow: hidden;
+}
+#app-loading>.up{
+  position: fixed;
+  top:0px;
+  left:0px;
+  width:100px;
+  height: 0px;
+  animation:loading-anim-up 10s infinite;
+  background: blue;
+}
+#app-loading>.down{
+  position: fixed;
+  top:100px;
+  left:0px;
+  width:100px;
+  height: 0px;
+  animation:loading-anim-down 10s infinite;
+  animation-delay: 5s;
+  background: purple;
+}
+#app-loading>.left{
+  position: fixed;
+  top:0px;
+  left:0px;
+  width:0px;
+  height:100px;
+  animation:loading-anim-left 10s infinite;
+
+  animation-delay: 2.5s;
+  background: green;
+}
+#app-loading>.right{
+  position: fixed;
+  top:0px;
+  left:100px;
+  width:100px;
+  height: 100px;
+  animation:loading-anim-right 10s infinite;
+  background: red;
+
+  animation-delay: 7.5s;
+}
+@keyframes loading-anim-up{
+  0%{
+    height:0px;
+    display:block;
+  }
+  25%{
+    height: 100px;
+  }
+  26%{
+    height: 0px;
+    display: none;
+  }
+  100%{
+    display: none;
+  }
+}
+@keyframes loading-anim-down{
+  0%{
+    height:100px;
+    top:100px;
+    display:block;
+  }
+  25%{
+    height: 100px;
+    top:0px;
+  }
+  26%{
+    height: 0px;
+    display: none;
+  }
+  100%{
+    display: none;
+  }
+}
+@keyframes loading-anim-left{
+  0%{
+    width:0px;
+    display:block;
+  }
+  25%{
+    width: 100px;
+  }
+  26%{
+    width: 0px;
+    display: none;
+  }
+  100%{
+    display: none;
+  }
+}
+@keyframes loading-anim-right{
+  0%{
+    width:100px;
+    display:block;
+    left:100px;
+  }
+  25%{
+    width:100px;
+    left:0px;
+  }
+  26%{
+    display: none;
+  }
+  27%{
+    width: 100px;
+    left:100px;
+    display: none;
+  }
+  100%{
+    left:100px;
+    display: none;
+  }
+}
+@keyframes loading-anim{
+  0%{
+    transform: rotate(0deg);
+    background: red;
+  }
+  5%{
+    background-color:red;
+  }
+  20%{background-color:red;}
+  25%{
+    background-color:blue;
+    transform: rotate(90deg);
+  }
+  45%{
+    background-color:blue;
+  }
+  50%{
+    background-color:green;
+    transform: rotate(180deg);
+  }
+  70%{
+    background-color:green;
+  }
+  75%{
+    background-color: purple;
+    transform: rotate(270deg);
+  }
+  95%{
+    background-color: purple;
+  }
+  100%{
+    background-color: red;
+    transform: rotate(360deg);
+  }
 }

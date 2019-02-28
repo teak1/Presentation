@@ -27,7 +27,7 @@ export default class presentation_preview {
                     <div class="app-preview-image-wrapper">
                         <img src={src} class="app-preview-image" />
                     </div>
-                    <h1 class="app-preview-text">{this.data.name}</h1>
+                    <h1 class="app-preview-text">{this.data.name.replace(/\\s/g, " ")}</h1>
                 </div>
                 <div class="app-preview-button-display-mask">
                     <div class="app-preview-button-wrapper">
