@@ -46,11 +46,19 @@ class App {
         util.api("GET", { id: this.id }, (result) => {
             console.log(result);
             this.presentation = result;
-            this.head.title.innerText = this.presentation.meta.name.replace(/\\s/g, " ");
+            document.getElementsByTagName("title")[0].innerText = this.presentation.META.name.replace(/\\s/g, " ");
             this.init_page();
         });
     }
-    init_page() { }
+    init_page() {
+        document.querySelector("#app-loading").classList.add("load-hidden");
+        setTimeout(() => {
+            let e = document.querySelector("#app-loading");
+            e.parentElement.removeChild(e);
+            this.elements.app.classList.add("app-visible");
+            // this.elements.app.setAttribute("style", "");
+        }, 1000);
+    }
     button_press(type, event) {
         console.log(type, event);
         switch (type) {

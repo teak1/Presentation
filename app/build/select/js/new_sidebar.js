@@ -21,25 +21,25 @@ const _JSX = {
 export default function (app) {
     let elements = (
         (function(_this){
-let _0_0n3va2yag97 = document.createElement("div");
-_JSX.attribute(_0_0n3va2yag97,"class","app-new-sidebar-menu");
-let _1_0plqc53sbm6n = document.createElement("div");
-_JSX.attribute(_1_0plqc53sbm6n,"class","app-interface-button");
-_JSX.attribute(_1_0plqc53sbm6n,"app-action","create_new");
-let _2_0n7r4cy3pw4i = document.createElement("span");
-let _3_0nziujmkwtf7 = document.createTextNode("Create");
-_2_0n7r4cy3pw4i.appendChild(_3_0nziujmkwtf7);
-_1_0plqc53sbm6n.appendChild(_2_0n7r4cy3pw4i);
-_0_0n3va2yag97.appendChild(_1_0plqc53sbm6n);
-let _4_0t759bgk9x2 = document.createElement("input");
-_JSX.attribute(_4_0t759bgk9x2,"id","app-new-name");
-_JSX.attribute(_4_0t759bgk9x2,"placeholder","Name");
-_0_0n3va2yag97.appendChild(_4_0t759bgk9x2);
-let _5_0ni2zfx1zdxq = document.createElement("textarea");
-_JSX.attribute(_5_0ni2zfx1zdxq,"id","app-new-description");
-_JSX.attribute(_5_0ni2zfx1zdxq,"placeholder","Description");
-_0_0n3va2yag97.appendChild(_5_0ni2zfx1zdxq);
-return _0_0n3va2yag97;})(this)
+let _0_0vvcp933oxck = document.createElement("div");
+_JSX.attribute(_0_0vvcp933oxck,"class","app-new-sidebar-menu");
+let _1_0t0yvoim5rn = document.createElement("div");
+_JSX.attribute(_1_0t0yvoim5rn,"class","app-interface-button");
+_JSX.attribute(_1_0t0yvoim5rn,"app-action","create_new");
+let _2_0wzh663nx5rc = document.createElement("span");
+let _3_0acnphh7s7w = document.createTextNode("Create");
+_2_0wzh663nx5rc.appendChild(_3_0acnphh7s7w);
+_1_0t0yvoim5rn.appendChild(_2_0wzh663nx5rc);
+_0_0vvcp933oxck.appendChild(_1_0t0yvoim5rn);
+let _4_092t9c604ki9 = document.createElement("input");
+_JSX.attribute(_4_092t9c604ki9,"id","app-new-name");
+_JSX.attribute(_4_092t9c604ki9,"placeholder","Name");
+_0_0vvcp933oxck.appendChild(_4_092t9c604ki9);
+let _5_02qo5ew827cg = document.createElement("textarea");
+_JSX.attribute(_5_02qo5ew827cg,"id","app-new-description");
+_JSX.attribute(_5_02qo5ew827cg,"placeholder","Description");
+_0_0vvcp933oxck.appendChild(_5_02qo5ew827cg);
+return _0_0vvcp933oxck;})(this)
     );
     app.register_button(elements.children[0]);
 

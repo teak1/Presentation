@@ -44,14 +44,22 @@ class App {
         this.to_load = 0;
         this.loaded = 0;
         util.api("PRESENTATIONS", {}, (data) => { this.to_load++; data.items.forEach(_ => { this.add_preview(_); }) });
+        if (this.to_load == 0) {
+            document.getElementById("app-loading").setAttribute("style", "opacity:0;transition:1s;");
+            setTimeout(() => {
+                document.getElementById("app").setAttribute("style", "opacity:1;transition:1s;");
+            }, 1000);
+        }
     }
     add_preview(prev_id) {
         let preview = null;
         this.previews.push(preview = new presentation_preview(prev_id, element => {
-            this.loaded++; document.querySelector(".app-preview-region").appendChild(element); if (this.to_load == this.loaded) {
+            this.loaded++; document.querySelector(".app-preview-region").appendChild(element);
+            if (this.to_load == this.loaded) {
                 document.getElementById("app-loading").setAttribute("style", "opacity:0;transition:1s;");
-                document.getElementById("app").setAttribute("style", "opacity:1;transition:1s;");
-
+                setTimeout(() => {
+                    document.getElementById("app").setAttribute("style", "opacity:1;transition:1s;");
+                }, 1000);
             }
         }, this));
     }
