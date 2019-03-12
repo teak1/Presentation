@@ -1,22 +1,4 @@
-const _JSX = {
-    attribute(el, name, val) {
-        if (val.constructor == Object) {
-            for (let k in val) {
-                el[name][k] = val[k];
-            }
-            return;
-        }
-        el.setAttribute(name, val);
-    },
-    append(el, child) {
-        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
-        if (child.nodeType || child.textContent) {
-            el.appendChild(child);
-        } else {
-            el.appendChild(document.createTextNode(child.toString()));
-        }
-    }
-};
+const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 export default {
     make(template) {

@@ -1,45 +1,27 @@
-const _JSX = {
-    attribute(el, name, val) {
-        if (val.constructor == Object) {
-            for (let k in val) {
-                el[name][k] = val[k];
-            }
-            return;
-        }
-        el.setAttribute(name, val);
-    },
-    append(el, child) {
-        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
-        if (child.nodeType || child.textContent) {
-            el.appendChild(child);
-        } else {
-            el.appendChild(document.createTextNode(child.toString()));
-        }
-    }
-};
+const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 export default function (app) {
     let elements = (
         (function(_this){
-let _0_0vvcp933oxck = document.createElement("div");
-_JSX.attribute(_0_0vvcp933oxck,"class","app-new-sidebar-menu");
-let _1_0t0yvoim5rn = document.createElement("div");
-_JSX.attribute(_1_0t0yvoim5rn,"class","app-interface-button");
-_JSX.attribute(_1_0t0yvoim5rn,"app-action","create_new");
-let _2_0wzh663nx5rc = document.createElement("span");
-let _3_0acnphh7s7w = document.createTextNode("Create");
-_2_0wzh663nx5rc.appendChild(_3_0acnphh7s7w);
-_1_0t0yvoim5rn.appendChild(_2_0wzh663nx5rc);
-_0_0vvcp933oxck.appendChild(_1_0t0yvoim5rn);
-let _4_092t9c604ki9 = document.createElement("input");
-_JSX.attribute(_4_092t9c604ki9,"id","app-new-name");
-_JSX.attribute(_4_092t9c604ki9,"placeholder","Name");
-_0_0vvcp933oxck.appendChild(_4_092t9c604ki9);
-let _5_02qo5ew827cg = document.createElement("textarea");
-_JSX.attribute(_5_02qo5ew827cg,"id","app-new-description");
-_JSX.attribute(_5_02qo5ew827cg,"placeholder","Description");
-_0_0vvcp933oxck.appendChild(_5_02qo5ew827cg);
-return _0_0vvcp933oxck;})(this)
+let _0_02a7xpuhetg9 = document.createElement("div");
+_JSX.attribute(_0_02a7xpuhetg9,"class","app-new-sidebar-menu");
+let _1_0pq18715rgg8 = document.createElement("div");
+_JSX.attribute(_1_0pq18715rgg8,"class","app-interface-button");
+_JSX.attribute(_1_0pq18715rgg8,"app-action","create_new");
+let _2_0tuogmewhd1 = document.createElement("span");
+let _3_0avzbra2to = document.createTextNode("Create");
+_2_0tuogmewhd1.appendChild(_3_0avzbra2to);
+_1_0pq18715rgg8.appendChild(_2_0tuogmewhd1);
+_0_02a7xpuhetg9.appendChild(_1_0pq18715rgg8);
+let _4_0yv8q4flyce = document.createElement("input");
+_JSX.attribute(_4_0yv8q4flyce,"id","app-new-name");
+_JSX.attribute(_4_0yv8q4flyce,"placeholder","Name");
+_0_02a7xpuhetg9.appendChild(_4_0yv8q4flyce);
+let _5_0c7ht9y5jia = document.createElement("textarea");
+_JSX.attribute(_5_0c7ht9y5jia,"id","app-new-description");
+_JSX.attribute(_5_0c7ht9y5jia,"placeholder","Description");
+_0_02a7xpuhetg9.appendChild(_5_0c7ht9y5jia);
+return _0_02a7xpuhetg9;})(this)
     );
     app.register_button(elements.children[0]);
 

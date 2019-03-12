@@ -1,22 +1,4 @@
-const _JSX = {
-    attribute(el, name, val) {
-        if (val.constructor == Object) {
-            for (let k in val) {
-                el[name][k] = val[k];
-            }
-            return;
-        }
-        el.setAttribute(name, val);
-    },
-    append(el, child) {
-        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
-        if (child.nodeType || child.textContent) {
-            el.appendChild(child);
-        } else {
-            el.appendChild(document.createTextNode(child.toString()));
-        }
-    }
-};
+const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 import util from "./util.js";
 export default class presentation_preview {
@@ -42,66 +24,66 @@ export default class presentation_preview {
     }
     createElements(src) {
         let e = ((function(_this){
-let _0_0q13vm7xugk = document.createElement("div");
-_JSX.attribute(_0_0q13vm7xugk,"class","app-preview-wrapper");
-let _1_0kgjg08b5l4 = document.createElement("div");
-_JSX.attribute(_1_0kgjg08b5l4,"class","app-preview-border");
-let _2_0vavpsrlc9v = document.createElement("div");
-_JSX.attribute(_2_0vavpsrlc9v,"class","app-preview-preview");
-let _3_0nn013z5p5zp = document.createElement("div");
-_JSX.attribute(_3_0nn013z5p5zp,"class","app-preview-image-wrapper");
-let _4_00llrmgobx7rb = document.createElement("img");
-_JSX.attribute(_4_00llrmgobx7rb,"src",src);
-_JSX.attribute(_4_00llrmgobx7rb,"class","app-preview-image");
-_3_0nn013z5p5zp.appendChild(_4_00llrmgobx7rb);
-_2_0vavpsrlc9v.appendChild(_3_0nn013z5p5zp);
-let _5_08ui4qrbqrno = document.createElement("h1");
-_JSX.attribute(_5_08ui4qrbqrno,"class","app-preview-text");
-_JSX.append(_5_08ui4qrbqrno,_this.data.name.replace(/\\s/g, " "));
-_2_0vavpsrlc9v.appendChild(_5_08ui4qrbqrno);
-_1_0kgjg08b5l4.appendChild(_2_0vavpsrlc9v);
-let _6_0reyqrqnutfj = document.createElement("div");
-_JSX.attribute(_6_0reyqrqnutfj,"class","app-preview-button-display-mask");
-let _7_0woqtssk9cj = document.createElement("div");
-_JSX.attribute(_7_0woqtssk9cj,"class","app-preview-button-wrapper");
-let _8_01ab64f7hjrf = document.createElement("div");
-_JSX.attribute(_8_01ab64f7hjrf,"class","app-interface-button");
-_JSX.attribute(_8_01ab64f7hjrf,"app-action","open");
-_JSX.attribute(_8_01ab64f7hjrf,"target-presentation",_this.data.query.id);
-let _9_0jogtodpdfsh = document.createElement("span");
-let _a_097mzwudh52v = document.createTextNode("OPEN");
-_9_0jogtodpdfsh.appendChild(_a_097mzwudh52v);
-_8_01ab64f7hjrf.appendChild(_9_0jogtodpdfsh);
-_7_0woqtssk9cj.appendChild(_8_01ab64f7hjrf);
-let _b_0q0tzsge6ko = document.createElement("hr");
-_JSX.attribute(_b_0q0tzsge6ko,"class","app-transparent");
-_7_0woqtssk9cj.appendChild(_b_0q0tzsge6ko);
-let _c_0s61xc44hags = document.createElement("div");
-_JSX.attribute(_c_0s61xc44hags,"class","app-interface-button");
-_JSX.attribute(_c_0s61xc44hags,"app-action","edit");
-_JSX.attribute(_c_0s61xc44hags,"target-presentation",_this.data.query.id);
-let _d_03qm4rythky2 = document.createElement("span");
-let _e_0bl3naevtvl = document.createTextNode("EDIT");
-_d_03qm4rythky2.appendChild(_e_0bl3naevtvl);
-_c_0s61xc44hags.appendChild(_d_03qm4rythky2);
-_7_0woqtssk9cj.appendChild(_c_0s61xc44hags);
-let _f_0y3xo545n5zg = document.createElement("hr");
-_JSX.attribute(_f_0y3xo545n5zg,"class","app-transparent");
-_7_0woqtssk9cj.appendChild(_f_0y3xo545n5zg);
-let _g_0mmgmq1wdj7 = document.createElement("div");
-_JSX.attribute(_g_0mmgmq1wdj7,"class","app-interface-button");
-_JSX.attribute(_g_0mmgmq1wdj7,"app-action","delete");
-_JSX.attribute(_g_0mmgmq1wdj7,"target-presentation",_this.data.query.id);
-_JSX.attribute(_g_0mmgmq1wdj7,"style","--offset:40px;");
-let _h_07o4y2sci2d6 = document.createElement("span");
-let _i_08v7egvbb65o = document.createTextNode("DELETE");
-_h_07o4y2sci2d6.appendChild(_i_08v7egvbb65o);
-_g_0mmgmq1wdj7.appendChild(_h_07o4y2sci2d6);
-_7_0woqtssk9cj.appendChild(_g_0mmgmq1wdj7);
-_6_0reyqrqnutfj.appendChild(_7_0woqtssk9cj);
-_1_0kgjg08b5l4.appendChild(_6_0reyqrqnutfj);
-_0_0q13vm7xugk.appendChild(_1_0kgjg08b5l4);
-return _0_0q13vm7xugk;})(this));
+let _0_0mxhpdejfv8 = document.createElement("div");
+_JSX.attribute(_0_0mxhpdejfv8,"class","app-preview-wrapper");
+let _1_0ptk0x36o8l = document.createElement("div");
+_JSX.attribute(_1_0ptk0x36o8l,"class","app-preview-border");
+let _2_0et3c3qaeiyt = document.createElement("div");
+_JSX.attribute(_2_0et3c3qaeiyt,"class","app-preview-preview");
+let _3_07c36bqdw065 = document.createElement("div");
+_JSX.attribute(_3_07c36bqdw065,"class","app-preview-image-wrapper");
+let _4_04xn8f8wbejp = document.createElement("img");
+_JSX.attribute(_4_04xn8f8wbejp,"src",src);
+_JSX.attribute(_4_04xn8f8wbejp,"class","app-preview-image");
+_3_07c36bqdw065.appendChild(_4_04xn8f8wbejp);
+_2_0et3c3qaeiyt.appendChild(_3_07c36bqdw065);
+let _5_0tzngu0lgqj = document.createElement("h1");
+_JSX.attribute(_5_0tzngu0lgqj,"class","app-preview-text");
+_JSX.append(_5_0tzngu0lgqj,_this.data.name.replace(/\\s/g, " "));
+_2_0et3c3qaeiyt.appendChild(_5_0tzngu0lgqj);
+_1_0ptk0x36o8l.appendChild(_2_0et3c3qaeiyt);
+let _6_003irtcb95b22 = document.createElement("div");
+_JSX.attribute(_6_003irtcb95b22,"class","app-preview-button-display-mask");
+let _7_0zhgl5124o1 = document.createElement("div");
+_JSX.attribute(_7_0zhgl5124o1,"class","app-preview-button-wrapper");
+let _8_00rs16zmkjrd = document.createElement("div");
+_JSX.attribute(_8_00rs16zmkjrd,"class","app-interface-button");
+_JSX.attribute(_8_00rs16zmkjrd,"app-action","open");
+_JSX.attribute(_8_00rs16zmkjrd,"target-presentation",_this.data.query.id);
+let _9_0yl9jtkg3n0m = document.createElement("span");
+let _a_0gsfgzlkmkzo = document.createTextNode("OPEN");
+_9_0yl9jtkg3n0m.appendChild(_a_0gsfgzlkmkzo);
+_8_00rs16zmkjrd.appendChild(_9_0yl9jtkg3n0m);
+_7_0zhgl5124o1.appendChild(_8_00rs16zmkjrd);
+let _b_03vux3mh923u = document.createElement("hr");
+_JSX.attribute(_b_03vux3mh923u,"class","app-transparent");
+_7_0zhgl5124o1.appendChild(_b_03vux3mh923u);
+let _c_0x6fpven5wrr = document.createElement("div");
+_JSX.attribute(_c_0x6fpven5wrr,"class","app-interface-button");
+_JSX.attribute(_c_0x6fpven5wrr,"app-action","edit");
+_JSX.attribute(_c_0x6fpven5wrr,"target-presentation",_this.data.query.id);
+let _d_0vx555fg672j = document.createElement("span");
+let _e_04qk2xenuqk = document.createTextNode("EDIT");
+_d_0vx555fg672j.appendChild(_e_04qk2xenuqk);
+_c_0x6fpven5wrr.appendChild(_d_0vx555fg672j);
+_7_0zhgl5124o1.appendChild(_c_0x6fpven5wrr);
+let _f_0va3v6q6sqd = document.createElement("hr");
+_JSX.attribute(_f_0va3v6q6sqd,"class","app-transparent");
+_7_0zhgl5124o1.appendChild(_f_0va3v6q6sqd);
+let _g_0ze7o79nmxpk = document.createElement("div");
+_JSX.attribute(_g_0ze7o79nmxpk,"class","app-interface-button");
+_JSX.attribute(_g_0ze7o79nmxpk,"app-action","delete");
+_JSX.attribute(_g_0ze7o79nmxpk,"target-presentation",_this.data.query.id);
+_JSX.attribute(_g_0ze7o79nmxpk,"style","--offset:40px;");
+let _h_0v7k36no99gq = document.createElement("span");
+let _i_06a583uo6o0r = document.createTextNode("DELETE");
+_h_0v7k36no99gq.appendChild(_i_06a583uo6o0r);
+_g_0ze7o79nmxpk.appendChild(_h_0v7k36no99gq);
+_7_0zhgl5124o1.appendChild(_g_0ze7o79nmxpk);
+_6_003irtcb95b22.appendChild(_7_0zhgl5124o1);
+_1_0ptk0x36o8l.appendChild(_6_003irtcb95b22);
+_0_0mxhpdejfv8.appendChild(_1_0ptk0x36o8l);
+return _0_0mxhpdejfv8;})(this));
         [...e.querySelectorAll(".app-interface-button")].forEach(el => app.register_button(el));
 
         return e;

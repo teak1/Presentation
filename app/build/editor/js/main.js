@@ -1,25 +1,8 @@
-const _JSX = {
-    attribute(el, name, val) {
-        if (val.constructor == Object) {
-            for (let k in val) {
-                el[name][k] = val[k];
-            }
-            return;
-        }
-        el.setAttribute(name, val);
-    },
-    append(el, child) {
-        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
-        if (child.nodeType || child.textContent) {
-            el.appendChild(child);
-        } else {
-            el.appendChild(document.createTextNode(child.toString()));
-        }
-    }
-};
+const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 import util from "./../../select/js/util.js";
 import html_parts from "./page.js";
+import hiarchy from "./HiarchyObject.js";
 const EVENT_TYPES = {
     back: Symbol("back"),
     "toggle-settings": Symbol("toggle-settings")
@@ -58,6 +41,7 @@ class App {
     init_page() {
         if (this.elements.body) {
             this.elements.app.appendChild(html_parts.headbar(this.presentation));
+            document.getElementById("app-loading").style.opacity = 0;
         } else {
             setTimeout(_ => this.init_page(), 100);
         }

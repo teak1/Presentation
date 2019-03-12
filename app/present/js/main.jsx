@@ -1,4 +1,6 @@
 import util from "./../../select/js/util.jsx";
+import RenderComponents from "./parts.jsx";
+console.log(RenderComponents);
 const EVENT_TYPES = {
     back: Symbol("back"),
     "toggle-settings": Symbol("toggle-settings")
@@ -13,7 +15,9 @@ class App {
                 loaded: false,//is the dom loaded.
             }
         };
-
+        this.timeStamp = 0;
+        this.lastTime = performance.now();;
+        this.startTime = performance.now();
         this.call_frame = () => { this.frame() };//a function that points to this.frame.
     }
     init() {
@@ -37,6 +41,19 @@ class App {
             e.parentElement.removeChild(e);
             this.elements.app.classList.add("app-visible");
             // this.elements.app.setAttribute("style", "");
+
+            let objects = this.presentation.PRESENTATION.data.objects;
+            let bgColor = this.presentation.PRESENTATION.bgColor;
+            if (bgColor) document.body.setAttribute("style", "--conf-bg:" + bgColor);
+            let Components = [];
+            for (let i = 0; i < objects.length; i++) {
+                let obj = objects[i];
+                console.log(obj);
+                let c = new RenderComponents[obj.type](obj);
+                Components.push(c);
+                document.querySelector("#app>#components").appendChild(c.element);
+            }
+            this.Components = Components;
         }, 1000);
     }
     button_press(type, event) {
@@ -71,6 +88,11 @@ class App {
             return null;//if dom is not loaded and the app is not initialized then do not run app functions.
         } else {
             //all is good, run app functions.
+            let dif = performance.now();
+            dif -= this.lastTime;
+            this.lastTime = performance.now();
+            this.timeStamp += dif;
+            document.getElementById("debug").innerText = this.timeStamp;
         }
     }
 }

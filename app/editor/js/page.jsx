@@ -1,4 +1,5 @@
 
+import hiarchy from "./HiarchyObject.jsx";
 function makeButton(path, cb) {
     let element = (<div class="app-button-static" app-action={cb}>
         <img src={path} width="50" height="50" ></img>
@@ -10,17 +11,32 @@ function makeButton(path, cb) {
 export default {
     headbar(presentation) {
         return (
-            <div class="app-header">
-                {
-                    makeButton("/assets/ico/png/back.png", "back")
-                }
-                <div class="app-title-wrapper">
-                    <strong>{presentation.META.name.replace(/\\s/g, " ")}</strong>
+            <div>
+                <div class="app-header">
+                    {
+                        makeButton("/assets/ico/png/back.png", "back")
+                    }
+                    <div class="app-title-wrapper">
+                        <strong>{presentation.META.name.replace(/\\s/g, " ")}</strong>
+                    </div>
+                    {
+                        makeButton("/assets/ico/png/settings.png", "toggle-settings")
+                    }
                 </div>
-                {
-                    makeButton("/assets/ico/png/settings.png", "toggle-settings")
-                }
+                <div class="app-content">
+                    <div class="hiarchy">
+                        {new hiarchy.Folder("test", [new hiarchy.Folder("world").element, new hiarchy.Folder("bbbb", [new hiarchy.Object({}).element]).element]).element}
+                    </div>
+                    <div class="object-select">
+                    </div>
+                    <div class="timeline">
+                    </div>
+                    <div class="properties">
+                    </div>
+                    <div class="preview"></div>
+                </div>
             </div>
+
         );
     }
 }

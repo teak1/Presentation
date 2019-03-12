@@ -1,24 +1,8 @@
-const _JSX = {
-    attribute(el, name, val) {
-        if (val.constructor == Object) {
-            for (let k in val) {
-                el[name][k] = val[k];
-            }
-            return;
-        }
-        el.setAttribute(name, val);
-    },
-    append(el, child) {
-        if (child.constructor == Array) return child.forEach((i) => _JSX.append(el, i));
-        if (child.nodeType || child.textContent) {
-            el.appendChild(child);
-        } else {
-            el.appendChild(document.createTextNode(child.toString()));
-        }
-    }
-};
+const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 import util from "./../../select/js/util.js";
+import RenderComponents from "./parts.js";
+console.log(RenderComponents);
 const EVENT_TYPES = {
     back: Symbol("back"),
     "toggle-settings": Symbol("toggle-settings")
@@ -33,7 +17,9 @@ class App {
                 loaded: false,//is the dom loaded.
             }
         };
-
+        this.timeStamp = 0;
+        this.lastTime = performance.now();;
+        this.startTime = performance.now();
         this.call_frame = () => { this.frame() };//a function that points to this.frame.
     }
     init() {
@@ -57,6 +43,19 @@ class App {
             e.parentElement.removeChild(e);
             this.elements.app.classList.add("app-visible");
             // this.elements.app.setAttribute("style", "");
+
+            let objects = this.presentation.PRESENTATION.data.objects;
+            let bgColor = this.presentation.PRESENTATION.bgColor;
+            if (bgColor) document.body.setAttribute("style", "--conf-bg:" + bgColor);
+            let Components = [];
+            for (let i = 0; i < objects.length; i++) {
+                let obj = objects[i];
+                console.log(obj);
+                let c = new RenderComponents[obj.type](obj);
+                Components.push(c);
+                document.querySelector("#app>#components").appendChild(c.element);
+            }
+            this.Components = Components;
         }, 1000);
     }
     button_press(type, event) {
@@ -91,6 +90,11 @@ class App {
             return null;//if dom is not loaded and the app is not initialized then do not run app functions.
         } else {
             //all is good, run app functions.
+            let dif = performance.now();
+            dif -= this.lastTime;
+            this.lastTime = performance.now();
+            this.timeStamp += dif;
+            document.getElementById("debug").innerText = this.timeStamp;
         }
     }
 }

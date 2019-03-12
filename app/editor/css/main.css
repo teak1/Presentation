@@ -1,10 +1,13 @@
+:root{
+    --app-panel-bg:#aaaaaa;
+}
 html,body{
     width:100vw;
     height:100vh;
 }
 .app-header{
     position: fixed;
-    top:0px;
+    top:-10px;
     left:0px;
     width:100vw;
     height:50px;
@@ -23,4 +26,75 @@ html,body{
     display: inline-block;
     width:50px;
     height: 50px;
+}
+.object-select{
+    position: absolute;
+    top:calc(50px + calc(100vh - 360px));
+    width:396px;
+    height:306px;
+    background-color:var(--app-panel-bg);
+    left:0px;
+    border:2px inset black;
+}
+.hiarchy{
+    position: absolute;
+    top:50px;
+    width:396px;
+    left:0px;
+    height:calc( 100vh - 360px - 4px);
+    background-color:var(--app-panel-bg);
+    border:2px inset black;
+}
+.timeline{
+    position: absolute;
+    top:calc(50px + calc(100vh - 360px));
+    left:400px;
+    width: calc(100vw - 800px - 4px);
+    height: 306px;
+    background-color:var(--app-panel-bg);
+    border:2px inset black;
+}
+.properties{
+    position: absolute;
+    top:50px;
+    left:calc(100vw - 400px);
+    width:396px;
+    height:calc(100vh - 54px);
+    background-color:var(--app-panel-bg);
+    border:2px inset black;
+}
+.preview{
+    background-color:var(--app-panel-bg);
+    position: absolute;
+    top:50px;
+    left:400px;
+    height: calc(100vh - 360px - 4px);
+    width: calc(100vw - 800px - 4px);
+    border:2px inset black;
+}
+.hiarchy-object{
+    border:1px solid black;
+}
+.hiarchy-hide-button{
+    display:inline-block;
+    width:19px;
+    text-align: center;
+}
+.hiarchy-folder-name{
+    position: relative;
+    min-width: 100px;
+    width:fit-content;
+    max-height: 1ch;
+}
+.hiarchy-item-name{
+    width:calc(100% - 25px);
+}
+.hiarchy-folder-children{
+    padding-left: 1em;
+}
+.app-hidexoverflow{
+    overflow-x:hidden;
+    width:100%;
+    height:min-content;
+    max-height: 19px;
 }

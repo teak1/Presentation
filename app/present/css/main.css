@@ -5,7 +5,7 @@ html,body{
   opacity: 1 !important;
   transition-duration: 1s;
   transition-property: background-color;
-  background-color: black !important;
+  background-color: var(--conf-bg) !important;
   display: block !important;
 }
 .app-wrapper-page{
@@ -15,7 +15,7 @@ html,body{
     top:0px;
     left:0px;
     overflow: hidden;
-    background-color: black;
+    background-color: var(--conf-bg);
 }
 .app-wrapper{
     margin-top:10px;
