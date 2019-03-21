@@ -1,5 +1,7 @@
 
+import text from "./objects/text.jsx";
 import hiarchy from "./HiarchyObject.jsx";
+window.test = new text();
 function makeButton(path, cb) {
     let element = (<div class="app-button-static" app-action={cb}>
         <img src={path} width="50" height="50" ></img>
@@ -28,6 +30,8 @@ export default {
                         {new hiarchy.Folder("test", [new hiarchy.Folder("world").element, new hiarchy.Folder("bbbb", [new hiarchy.Object({}).element]).element]).element}
                     </div>
                     <div class="object-select">
+                        <div class="object-wrapper">
+                        </div>
                     </div>
                     <div class="timeline">
                     </div>

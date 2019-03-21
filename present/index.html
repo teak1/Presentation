@@ -27,7 +27,6 @@
     <script>
         import('../app/build/present/js/main.js')
             .then(app => {
-                console.log(app);
                 window.app = app.default;
                 app.default.start();
             }).catch(error => {

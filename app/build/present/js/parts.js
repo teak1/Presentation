@@ -1,4 +1,4 @@
-const _JSX = { attribute(e, n, v) { if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
+const _JSX = { attribute(e, n, v) { if (!v) return; if (v.constructor == Object) { for (let k in v) e[n][k] = v[k]; return; } e.setAttribute(n, v); }, append(e, c) { if (c == undefined) return; if (c.constructor == Array) return c.forEach((i) => _JSX.append(e, i)); if (c.nodeType || c.textContent) return e.appendChild(c); e.appendChild(document.createTextNode(c.toString())); } };
 /*end of jsx code*/
 let classNames = [];
 function generateClassName() {
@@ -55,11 +55,7 @@ class Text {
         //     margin: "0px"
         // }, this.details);
         this.element = (
-            (function(_this){
-let _0_0cly3hzkd33 = document.createElement("div");
-_JSX.attribute(_0_0cly3hzkd33,"class",_this.className);
-_JSX.append(_0_0cly3hzkd33,text);
-return _0_0cly3hzkd33;})(this)
+            (function(_this){let _0_00psn06kq0unr = document.createElement("div");_JSX.attribute(_0_00psn06kq0unr,"class",_this.className);_JSX.append(_0_00psn06kq0unr,text);return _0_00psn06kq0unr;})(this)
         );
     }
 }
@@ -83,10 +79,7 @@ class Box {
             margin: "0px"
         }, this.details);
         this.element = (
-            (function(_this){
-let _0_0gbgfhj7h7x = document.createElement("div");
-_JSX.attribute(_0_0gbgfhj7h7x,"style",style);
-return _0_0gbgfhj7h7x;})(this)
+            (function(_this){let _0_0vxyreqv7yg = document.createElement("div");_JSX.attribute(_0_0vxyreqv7yg,"style",style);return _0_0vxyreqv7yg;})(this)
         );
     }
 }

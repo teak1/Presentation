@@ -1,6 +1,5 @@
 import util from "./../../select/js/util.jsx";
 import html_parts from "./page.jsx";
-import hiarchy from "./HiarchyObject.jsx";
 const EVENT_TYPES = {
     back: Symbol("back"),
     "toggle-settings": Symbol("toggle-settings")
@@ -39,7 +38,8 @@ class App {
     init_page() {
         if (this.elements.body) {
             this.elements.app.appendChild(html_parts.headbar(this.presentation));
-            document.getElementById("app-loading").style.opacity = 0;
+            document.getElementById("app-loading").classList.add("load-hidden");
+            setTimeout(() => document.body.removeChild(document.getElementById("app-loading")), 1000);
         } else {
             setTimeout(_ => this.init_page(), 100);
         }

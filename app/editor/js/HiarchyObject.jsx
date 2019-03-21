@@ -3,10 +3,12 @@ class Folder {
         this.name = name;
         this.button0;
         this.button1;
+        this.button2;
         this.element = (<div class="hiarchy-folder hiarchy-object">
             <div class="app-hidexoverflow">
                 {this.button0 = this.createButton("↓", () => this.toggleChildVisible())}
                 {this.button1 = this.createButton("X", () => { console.log("remove element", this); })}
+                {this.button2 = this.createButton("↕", (event) => { this.move(event) })}
                 {this.name = this.createName(name)}
             </div>
             <div class="hiarchy-folder-children">
@@ -41,7 +43,7 @@ class Folder {
     }
 }
 class object {
-    constructor(object) {
+    constructor({ name }) {
         this.name = name;
         this.element = (<div class="hiarchy-folder hiarchy-object">
             {this.createButton("X", console.log)}
